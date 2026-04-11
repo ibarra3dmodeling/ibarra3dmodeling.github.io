@@ -24,7 +24,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 nav.scrolled { background: rgba(14,14,14,0.92); backdrop-filter: blur(12px); border-color: var(--border); }
 .logo { font-family: var(--font-display); font-size: 20px; color: var(--text); text-decoration: none; cursor: pointer; }
 .nav-links { display: flex; gap: 32px; align-items: center; }
-.nav-links a { font-size: 13px; font-weight: 300; color: var(--muted); text-decoration: none; cursor: pointer; transition: color 0.2s; letter-spacing: 0.3px; }
+.nav-links a { font-size: 15px; font-weight: 300; color: var(--muted); text-decoration: none; cursor: pointer; transition: color 0.2s; letter-spacing: 0.3px; }
 .nav-links a:hover, .nav-links a.active { color: var(--text); }
 .nav-cta { font-size: 12px !important; font-weight: 500 !important; padding: 8px 20px; border: 0.5px solid var(--accent) !important; color: var(--accent) !important; border-radius: 2px; background: transparent; transition: background 0.2s, color 0.2s; letter-spacing: 0.5px; text-transform: uppercase; }
 .nav-cta:hover { background: var(--accent) !important; color: #0e0e0e !important; }
@@ -85,8 +85,8 @@ footer span { font-size: 12px; color: var(--muted); font-weight: 300; }
 .artstation-link:hover { opacity: 0.7; }
 
 /* ABOUT PAGE */
-.about-page { padding: 88px 48px 80px; }
-.about-inner { display: grid; grid-template-columns: 240px 1fr; gap: 80px; max-width: 860px; margin: 40px auto 0; }
+.about-page { padding: 88px 48px 80px; min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-start; }
+.about-inner { display: grid; grid-template-columns: 240px 1fr; gap: 80px; max-width: 860px; margin: 40px auto 0; align-items: start; }
 .about-photo { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; object-position: center top; border: 0.5px solid var(--border); display: block; margin-bottom: 24px; }
 .about-name { font-family: var(--font-display); font-size: 24px; font-weight: 400; color: var(--text); margin-bottom: 6px; }
 .about-role { font-size: 12px; color: var(--accent); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
@@ -135,6 +135,25 @@ textarea.form-input { resize: vertical; min-height: 140px; }
 .back-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); cursor: pointer; margin-bottom: 32px; border: none; background: none; font-family: var(--font-body); padding: 0; transition: color 0.2s; }
 .back-btn:hover { color: var(--text); }
 
+
+
+.shop-hero { padding: 88px 48px 48px; max-width: 960px; margin: 0 auto; }
+.shop-title { font-family: var(--font-display); font-size: clamp(42px, 6vw, 80px); font-weight: 400; letter-spacing: -1px; line-height: 1.05; margin: 16px 0 20px; }
+.shop-sub { font-size: 15px; font-weight: 300; color: var(--muted); max-width: 440px; line-height: 1.75; }
+.shop-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 3px; padding: 0 48px 80px; max-width: 960px; margin: 0 auto; }
+.product-card { background: var(--bg2); border: 0.5px solid var(--border); display: flex; flex-direction: column; }
+.product-img-wrap { aspect-ratio: 4/3; overflow: hidden; background: #1a1a1a; }
+.product-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.88); transition: filter 0.3s, transform 0.5s; }
+.product-card:hover .product-img-wrap img { filter: brightness(1); transform: scale(1.03); }
+.product-body { padding: 24px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.product-title { font-family: var(--font-display); font-size: 22px; font-weight: 400; color: var(--text); }
+.product-desc { font-size: 13px; font-weight: 300; color: var(--muted); line-height: 1.7; flex: 1; }
+.product-price { font-size: 20px; font-weight: 500; color: var(--accent); margin-top: 4px; }
+.buy-btn { margin-top: 12px; width: 100%; padding: 12px; background: transparent; border: 0.5px solid var(--accent); color: var(--accent); font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; border-radius: 2px; transition: background 0.2s, color 0.2s; }
+.buy-btn:hover { background: var(--accent); color: #0e0e0e; }
+
+
+
 /* FADE IN */
 .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -147,7 +166,8 @@ textarea.form-input { resize: vertical; min-height: 140px; }
 <nav id="nav">
   <span class="logo" onclick="showPage('home')">Ibarra3D</span>
   <div class="nav-links">
-    <a onclick="showPage('home')" id="nav-projects" class="active">Projects</a>
+    <a onclick="showPage('home')" id="nav-projects" class="active">Portfolio</a>
+    <a onclick="showPage('shop')" id="nav-shop">Shop</a>
     <a onclick="showPage('about')" id="nav-about">About</a>
     <a onclick="showPage('contact')" class="nav-cta" id="nav-contact">Contact</a>
   </div>
@@ -383,6 +403,53 @@ textarea.form-input { resize: vertical; min-height: 140px; }
   </div>
 </div>
 
+
+<!-- ══ SHOP ══ -->
+<div class="page" id="page-shop">
+  <section class="shop-hero">
+    <div class="hero-eyebrow">3D Printable Files</div>
+    <h1 class="shop-title">Shop</h1>
+    <p class="shop-sub">High-quality STL files ready for 3D printing. Each model is optimized for FDM and resin printers.</p>
+  </section>
+
+  <div class="shop-grid">
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="images/dwarf/01_front.jpg" alt="Miner Dwarf">
+      </div>
+      <div class="product-body">
+        <div class="product-title">Miner Dwarf</div>
+        <div class="product-desc">Full body miniature created for MKZ Games in Bilbao. Fully sculpted in ZBrush and optimized for resin and FDM 3D printing.</div>
+        <div class="product-price">€6.00</div>
+        <button class="buy-btn" onclick="window.open('https://buy.stripe.com/test_bJe28kbUq9t8c3GgW0b3q00', '_blank')">Buy — €6.00</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="images/ambessa/01_face_dark.jpg" alt="Ambessa Medarda">
+      </div>
+      <div class="product-body">
+        <div class="product-title">Ambessa Medarda</div>
+        <div class="product-desc">Fan art sculpt based on Fortiche Prod and Riot Games' Arcane. Highly detailed, inspired by Ladislas Gueros' work. Ready for resin printing.</div>
+        <div class="product-price">€14.00</div>
+        <button class="buy-btn" onclick="window.open('https://buy.stripe.com/test_14A3co4rY7l07Nq9tyb3q01', '_blank')">Buy — €14.00</button>
+      </div>
+    </div>
+
+  </div>
+
+  <footer style="margin-top:80px;">
+    <span>© Ibarra3D · Mikel Ibarra · 2025</span>
+    <div style="display:flex;gap:20px;align-items:center;">
+      <a href="https://www.artstation.com/mikellekim99" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:none;letter-spacing:1px;text-transform:uppercase;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">ArtStation</a>
+      <a href="https://www.linkedin.com/in/mikelibarra/" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:none;letter-spacing:1px;text-transform:uppercase;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">LinkedIn</a>
+      <span style="font-size:12px;color:var(--muted);">Bilbao, Spain</span>
+    </div>
+  </footer>
+</div>
+
 <!-- ══ ABOUT ══ -->
 <div class="page" id="page-about">
   <div class="about-page">
@@ -495,6 +562,7 @@ function showPage(page) {
   window.scrollTo(0, 0);
   if (page === 'home') document.getElementById('nav-projects').classList.add('active');
   if (page === 'about') document.getElementById('nav-about').classList.add('active');
+  if (page === 'shop') { document.getElementById('nav-shop').classList.add('active'); }
 }
 
 function showProject(index) {
@@ -575,6 +643,62 @@ function submitContact() {
     btn.disabled = false; btn.style.opacity = '1';
   }, 3000);
 }
+
+
+// ── PayPal Smart Buttons ──
+// ★ SETUP INSTRUCTIONS:
+// 1. Go to developer.paypal.com and create a PayPal app to get your client-id
+// 2. Replace YOUR_PAYPAL_CLIENT_ID below with your actual client-id
+// 3. For each product, create a PayPal product+price in your dashboard
+// 4. Replace the amount and description in each button render call
+// 5. When a payment completes, send the STL download link via email (see onApprove)
+
+function initPayPalButtons() {
+  if (typeof paypal === 'undefined') return;
+
+  // ★ Miner Dwarf button — change amount and description per product
+  paypal.Buttons({
+    style: {
+      layout: 'horizontal',
+      color: 'black',
+      shape: 'rect',
+      label: 'pay',
+      height: 40
+    },
+    createOrder: function(data, actions) {
+      return actions.order.create({
+        purchase_units: [{
+          description: 'Miner Dwarf STL — Ibarra3D',
+          amount: { value: '12.00', currency_code: 'EUR' }
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(details) {
+        // ★ Here you can send the download link
+        // For now shows confirmation — integrate email service later
+        alert('Payment complete! Thank you ' + details.payer.name.given_name + '. You will receive your STL download link at ' + details.payer.email_address + ' shortly.');
+      });
+    },
+    onError: function(err) {
+      alert('Payment error. Please try again or contact ibarra3dmodeling@gmail.com');
+    }
+  }).render('#paypal-btn-dwarf');
+}
+
+// Load PayPal SDK when Shop page is opened
+let paypalLoaded = false;
+function loadPayPal() {
+  if (paypalLoaded) { initPayPalButtons(); return; }
+  // ★ REPLACE YOUR_PAYPAL_CLIENT_ID with your actual PayPal client ID
+  var script = document.createElement('script');
+  script.src = 'https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=EUR';
+  script.onload = function() { paypalLoaded = true; initPayPalButtons(); };
+  document.head.appendChild(script);
+}
+
+
+// payments handled via Stripe Payment Links // kept for compatibility
 
 window.addEventListener('load', function() {
   buildImageArrays();
