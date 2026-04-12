@@ -166,6 +166,12 @@ textarea.form-input { resize: vertical; min-height: 140px; }
 .shop-lb-title { font-family: var(--font-display); font-size: 18px; color: #fff; }
 .shop-lb-counter { font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 2px; margin-top: 2px; }
 
+
+.product-card { cursor: pointer; transition: border-color 0.2s; }
+.product-card:hover { border-color: rgba(255,255,255,0.2); }
+.product-tag { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+.shop-placeholder { width: 100%; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; background: #1a1a1a; font-family: var(--font-display); font-size: 36px; color: rgba(255,255,255,0.08); }
+
 /* FADE IN */
 .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -422,57 +428,199 @@ textarea.form-input { resize: vertical; min-height: 140px; }
   <section class="shop-hero">
     <div class="hero-eyebrow">3D Printable Files</div>
     <h1 class="shop-title">Shop</h1>
-    <p class="shop-sub">High-quality STL files ready for 3D printing. Each model is optimized for FDM and resin printers.</p>
+    <p class="shop-sub">High-quality STL files ready for 3D printing. Secure purchase and instant download via Cults3D.</p>
   </section>
 
   <div class="shop-grid">
-
-    <!-- MINER DWARF -->
-    <div class="product-card">
-      <div class="product-img-wrap" onclick="openShopLightbox(0)">
-        <img src="images/dwarf/01_front.jpg" alt="Miner Dwarf">
-        <div class="product-img-overlay"><span>View renders</span></div>
+    <div class="product-card" onclick="window.open('https://cults3d.com/en/3d-model/art/simba-timon-and-pumba-composition-the-lion-king','_blank')">
+      <div class="product-img-wrap">
+        <img src="images/shop/01_simba_comp.jpg" alt="Simba, Timon & Pumba Diorama">
+        <div class="product-img-overlay"><span>View on Cults3D ↗</span></div>
       </div>
       <div class="product-body">
-        <div class="product-title">Miner Dwarf</div>
-        <div class="product-desc">Full body miniature created for MKZ Games in Bilbao. Fully sculpted in ZBrush and optimized for resin and FDM 3D printing.</div>
-        <div class="product-price">€6.00</div>
-        <button class="buy-btn" onclick="buyProduct('https://buy.stripe.com/test_bJe28kbUq9t8c3GgW0b3q00','dwarf')">Buy — €6.00</button>
+        <div class="product-tag">The Lion King</div>
+        <div class="product-title">Simba, Timon & Pumba Diorama</div>
+        <div class="product-price">€9.60</div>
       </div>
     </div>
-
-    <!-- AMBESSA -->
-    <div class="product-card">
-      <div class="product-img-wrap" onclick="openShopLightbox(1)">
-        <img src="images/ambessa/01_face_dark.jpg" alt="Ambessa Medarda">
-        <div class="product-img-overlay"><span>View renders</span></div>
+    <div class="product-card" onclick="window.open('https://cults3d.com/en/3d-model/art/timon-pumba-the-lion-king','_blank')">
+      <div class="product-img-wrap">
+        <img src="images/shop/02_timon_pumba.jpg" alt="Timon & Pumba">
+        <div class="product-img-overlay"><span>View on Cults3D ↗</span></div>
       </div>
       <div class="product-body">
-        <div class="product-title">Ambessa Medarda</div>
-        <div class="product-desc">Fan art sculpt based on Fortiche Prod and Riot Games' Arcane. Highly detailed, inspired by Ladislas Gueros' work. Ready for resin printing.</div>
-        <div class="product-price">€14.00</div>
-        <button class="buy-btn" onclick="buyProduct('https://buy.stripe.com/test_14A3co4rY7l07Nq9tyb3q01','ambessa')">Buy — €14.00</button>
+        <div class="product-tag">The Lion King</div>
+        <div class="product-title">Timon & Pumba</div>
+        <div class="product-price">€4.80</div>
       </div>
     </div>
-
-  </div>
-
-  <!-- Shop Lightbox -->
-  <div class="lightbox" id="shop-lightbox">
-    <button class="lb-close" onclick="closeShopLightbox()">✕</button>
-    <button class="lb-arrow lb-prev" onclick="shopLbNav(-1)">&#8249;</button>
-    <div class="shop-lb-inner">
-      <img class="lb-img" id="shop-lb-img" src="" alt="">
-      <div class="shop-lb-footer">
-        <div>
-          <div class="shop-lb-title" id="shop-lb-title"></div>
-          <div class="shop-lb-counter" id="shop-lb-counter"></div>
-        </div>
-        <button class="buy-btn" id="shop-lb-buy" style="width:auto;padding:10px 28px;" onclick="shopLbBuy()">Buy now</button>
+    <div class="product-card" onclick="window.open('https://cults3d.com/en/3d-model/art/baby-simba','_blank')">
+      <div class="product-img-wrap">
+        <img src="images/shop/03_simba.jpg" alt="Simba">
+        <div class="product-img-overlay"><span>View on Cults3D ↗</span></div>
+      </div>
+      <div class="product-body">
+        <div class="product-tag">The Lion King</div>
+        <div class="product-title">Simba</div>
+        <div class="product-price">€3.20</div>
       </div>
     </div>
-    <button class="lb-arrow lb-next" onclick="shopLbNav(1)">&#8250;</button>
+    <div class="product-card" onclick="window.open('https://cults3d.com/en/3d-model/naughties/reze-in-underwear-chainsaw-man-3d-printable-figure-bomb-girl-fan-art-stl','_blank')">
+      <div class="product-img-wrap">
+        <img src="images/shop/04_reze_under.jpg" alt="Reze in Underwear">
+        <div class="product-img-overlay"><span>View on Cults3D ↗</span></div>
+      </div>
+      <div class="product-body">
+        <div class="product-tag">Chainsaw Man</div>
+        <div class="product-title">Reze in Underwear</div>
+        <div class="product-price">€6.40</div>
+      </div>
+    </div>
+    <div class="product-card" onclick="window.open('https://cults3d.com/en/3d-model/art/reze-chainsaw-man-3d-printable-figure-bomb-girl-fan-art-stl','_blank')">
+      <div class="product-img-wrap">
+        <img src="images/shop/05_reze.jpg" alt="Reze — Bomb Girl">
+        <div class="product-img-overlay"><span>View on Cults3D ↗</span></div>
+      </div>
+      <div class="product-body">
+        <div class="product-tag">Chainsaw Man</div>
+        <div class="product-title">Reze — Bomb Girl</div>
+        <div class="product-price">€14.40</div>
+      </div>
+    </div>
+    <div class="product-card" onclick="window.open('https://cults3d.com/en/3d-model/art/ambessa-from-arcane-150mm','_blank')">
+      <div class="product-img-wrap">
+        <img src="images/shop/06_ambessa.jpg" alt="Ambessa Medarda Arcane STL">
+        <div class="product-img-overlay"><span>View on Cults3D ↗</span></div>
+      </div>
+      <div class="product-body">
+        <div class="product-tag">Arcane · Riot Games</div>
+        <div class="product-title">Ambessa Medarda Arcane STL</div>
+        <div class="product-price">€14.40</div>
+      </div>
+    </div>
+    <div class="product-card" onclick="window.open('https://cults3d.com/en/3d-model/fashion/ambessa-medarda-mask-1-1','_blank')">
+      <div class="product-img-wrap">
+        <img src="images/shop/07_ambessa_mask.jpg" alt="Ambessa Medarda Mask Cosplay">
+        <div class="product-img-overlay"><span>View on Cults3D ↗</span></div>
+      </div>
+      <div class="product-body">
+        <div class="product-tag">Arcane · Cosplay</div>
+        <div class="product-title">Ambessa Medarda Mask Cosplay</div>
+        <div class="product-price">€4.80</div>
+      </div>
+    </div>
+    <div class="product-card" onclick="window.open('https://cults3d.com/en/3d-model/art/mining-dwarf-miniature-stl','_blank')">
+      <div class="product-img-wrap">
+        <img src="images/shop/08_dwarf.jpg" alt="Mining Dwarf Miniature">
+        <div class="product-img-overlay"><span>View on Cults3D ↗</span></div>
+      </div>
+      <div class="product-body">
+        <div class="product-tag">3D Print · Miniature</div>
+        <div class="product-title">Mining Dwarf Miniature</div>
+        <div class="product-price">€6.40</div>
+      </div>
+    </div>
+    <div class="product-card" onclick="window.open('https://cults3d.com/en/3d-model/game/hollow-knight-grimm-figurine-stls','_blank')">
+      <div class="product-img-wrap">
+        <img src="images/shop/09_hk_grimm.jpg" alt="Hollow Knight & Grimm">
+        <div class="product-img-overlay"><span>View on Cults3D ↗</span></div>
+      </div>
+      <div class="product-body">
+        <div class="product-tag">Hollow Knight</div>
+        <div class="product-title">Hollow Knight & Grimm</div>
+        <div class="product-price">€4.00</div>
+      </div>
+    </div>
+    <div class="product-card" onclick="window.open('https://cults3d.com/en/3d-model/game/sherma-ibarra3dmodeling','_blank')">
+      <div class="product-img-wrap">
+        <img src="images/shop/10_sherma.jpg" alt="Silksong — Sherma">
+        <div class="product-img-overlay"><span>View on Cults3D ↗</span></div>
+      </div>
+      <div class="product-body">
+        <div class="product-tag">Hollow Knight Silksong</div>
+        <div class="product-title">Silksong — Sherma</div>
+        <div class="product-price">€3.20</div>
+      </div>
+    </div>
+    <div class="product-card" onclick="window.open('http://cults3d.com/en/3d-model/game/flea-master-silksong','_blank')">
+      <div class="product-img-wrap">
+        <img src="images/shop/11_flea_master.jpg" alt="Silksong — Flea Master">
+        <div class="product-img-overlay"><span>View on Cults3D ↗</span></div>
+      </div>
+      <div class="product-body">
+        <div class="product-tag">Hollow Knight Silksong</div>
+        <div class="product-title">Silksong — Flea Master</div>
+        <div class="product-price">€3.20</div>
+      </div>
+    </div>
+    <div class="product-card" onclick="window.open('https://cults3d.com/en/3d-model/game/lace-ibarra3dmodeling','_blank')">
+      <div class="product-img-wrap">
+        <img src="images/shop/12_lace.jpg" alt="Silksong — Lace">
+        <div class="product-img-overlay"><span>View on Cults3D ↗</span></div>
+      </div>
+      <div class="product-body">
+        <div class="product-tag">Hollow Knight Silksong</div>
+        <div class="product-title">Silksong — Lace</div>
+        <div class="product-price">€3.20</div>
+      </div>
+    </div>
+    <div class="product-card" onclick="window.open('https://cults3d.com/en/3d-model/game/hornet-ibarra3dmodeling','_blank')">
+      <div class="product-img-wrap">
+        <img src="images/shop/13_hornet.jpg" alt="Silksong — Hornet">
+        <div class="product-img-overlay"><span>View on Cults3D ↗</span></div>
+      </div>
+      <div class="product-body">
+        <div class="product-tag">Hollow Knight Silksong</div>
+        <div class="product-title">Silksong — Hornet</div>
+        <div class="product-price">€3.20</div>
+      </div>
+    </div>
+    <div class="product-card" onclick="window.open('https://cults3d.com/en/3d-model/game/grindle','_blank')">
+      <div class="product-img-wrap">
+        <img src="images/shop/14_grindle.jpg" alt="Silksong — Grindle">
+        <div class="product-img-overlay"><span>View on Cults3D ↗</span></div>
+      </div>
+      <div class="product-body">
+        <div class="product-tag">Hollow Knight Silksong</div>
+        <div class="product-title">Silksong — Grindle</div>
+        <div class="product-price">€3.20</div>
+      </div>
+    </div>
+    <div class="product-card" onclick="window.open('https://cults3d.com/en/3d-model/game/hollow-knight-silksong-fleas-ibarra3dmodeling','_blank')">
+      <div class="product-img-wrap">
+        <img src="images/shop/15_fleas.jpg" alt="Silksong — Fleas">
+        <div class="product-img-overlay"><span>View on Cults3D ↗</span></div>
+      </div>
+      <div class="product-body">
+        <div class="product-tag">Hollow Knight Silksong</div>
+        <div class="product-title">Silksong — Fleas</div>
+        <div class="product-price">€3.20</div>
+      </div>
+    </div>
+    <div class="product-card" onclick="window.open('https://cults3d.com/en/3d-model/game/bellbeast-ibarra3dmodeling','_blank')">
+      <div class="product-img-wrap">
+        <img src="images/shop/16_bellbeast.jpg" alt="Silksong — BellBeast">
+        <div class="product-img-overlay"><span>View on Cults3D ↗</span></div>
+      </div>
+      <div class="product-body">
+        <div class="product-tag">Hollow Knight Silksong</div>
+        <div class="product-title">Silksong — BellBeast</div>
+        <div class="product-price">€3.20</div>
+      </div>
+    </div>
+    <div class="product-card" onclick="window.open('https://cults3d.com/en/3d-model/game/hollow-knight-silksong-composition-stl','_blank')">
+      <div class="product-img-wrap">
+        <img src="images/shop/17_hk_comp.jpg" alt="Hollow Knight Silksong Composition">
+        <div class="product-img-overlay"><span>View on Cults3D ↗</span></div>
+      </div>
+      <div class="product-body">
+        <div class="product-tag">Hollow Knight Silksong</div>
+        <div class="product-title">Hollow Knight Silksong Composition</div>
+        <div class="product-price">€14.40</div>
+      </div>
+    </div>
   </div>
+
 
   <footer style="margin-top:80px;">
     <span>© Ibarra3D · Mikel Ibarra · 2025</span>
@@ -733,49 +881,7 @@ function loadPayPal() {
 
 
 
-// ── Shop Lightbox ──
-var shopImages = [['images/dwarf/01_front.jpg', 'images/dwarf/02_back.jpg'], ['images/ambessa/01_face_dark.jpg', 'images/ambessa/02_full_turnaround.jpg', 'images/ambessa/03_upper_front.jpg', 'images/ambessa/04_torso_detail.jpg', 'images/ambessa/05_waist_weapons.jpg', 'images/ambessa/06_feet_base.jpg', 'images/ambessa/07_back_detail.jpg']];
-var shopBuyLinks = ['https://buy.stripe.com/test_bJe28kbUq9t8c3GgW0b3q00', 'https://buy.stripe.com/test_14A3co4rY7l07Nq9tyb3q01'];
-var shopTitles = ['Miner Dwarf', 'Ambessa Medarda'];
-var shopPrices = ['€6.00', '€14.00'];
-var shopLbProduct = 0, shopLbIndex = 0;
-
-function openShopLightbox(product) {
-  shopLbProduct = product; shopLbIndex = 0;
-  updateShopLightbox();
-  document.getElementById('shop-lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeShopLightbox() {
-  document.getElementById('shop-lightbox').classList.remove('open');
-  document.body.style.overflow = '';
-}
-function updateShopLightbox() {
-  var imgs = shopImages[shopLbProduct];
-  document.getElementById('shop-lb-img').src = imgs[shopLbIndex];
-  document.getElementById('shop-lb-title').textContent = shopTitles[shopLbProduct];
-  document.getElementById('shop-lb-counter').textContent = (shopLbIndex+1) + ' / ' + imgs.length;
-  document.getElementById('shop-lb-buy').textContent = 'Buy — ' + shopPrices[shopLbProduct];
-}
-function shopLbNav(dir) {
-  var imgs = shopImages[shopLbProduct];
-  shopLbIndex = (shopLbIndex + dir + imgs.length) % imgs.length;
-  updateShopLightbox();
-}
-function shopLbBuy() {
-  var ids = ['dwarf','ambessa'];
-  buyProduct(shopBuyLinks[shopLbProduct], ids[shopLbProduct]);
-}
-document.addEventListener('keydown', function(e) {
-  if (document.getElementById('shop-lightbox').classList.contains('open')) {
-    if (e.key === 'Escape') closeShopLightbox();
-    if (e.key === 'ArrowRight') shopLbNav(1);
-    if (e.key === 'ArrowLeft') shopLbNav(-1);
-  }
-});
-document.getElementById('shop-lightbox').addEventListener('click', function(e) {
-  if (e.target === this) closeShopLightbox();
-});
+// shop products link directly to Cults3D
 
 
 // ── EmailJS Init ──
@@ -821,42 +927,7 @@ emailjs.init('5qrXAhm9cyTUBBpia');
 })();
 
 
-// ── Email capture before Stripe redirect ──
-function buyProduct(stripeUrl, productId) {
-  var email = prompt('Enter your email address to receive the download link after payment:');
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    if (email !== null) alert('Please enter a valid email address.');
-    return;
-  }
-  // Store email for after payment return
-  sessionStorage.setItem('pending_email', email);
-  sessionStorage.setItem('pending_product', productId);
-  window.open(stripeUrl, '_blank');
-
-  // Poll for when user comes back (they close the Stripe tab)
-  // Show manual confirmation option
-  setTimeout(function() {
-    if (confirm('Did you complete the payment?\n\nClick OK and we will send your STL to ' + email)) {
-      var productName = productId === 'dwarf' ? 'Miner Dwarf STL' : 'Ambessa Medarda STL';
-      var downloadLink = productId === 'dwarf'
-        ? '[Miner Dwarf download link]'
-        : '[Ambessa download link]';
-      emailjs.send('service_cr82kgj', 'template_imdboia', {
-        to_email: email,
-        product_name: productName,
-        download_link: downloadLink
-      }).then(function() {
-        alert('✓ Email sent to ' + email + '! Check your inbox.');
-        sessionStorage.removeItem('pending_email');
-        sessionStorage.removeItem('pending_product');
-      }, function(err) {
-        alert('Could not send email automatically. Please contact ibarra3dmodeling@gmail.com');
-      });
-    }
-  }, 8000);
-}
-
-// payments handled via Stripe Payment Links // kept for compatibility
+// payments via Cults3D // kept for compatibility
 
 window.addEventListener('load', function() {
   buildImageArrays();
