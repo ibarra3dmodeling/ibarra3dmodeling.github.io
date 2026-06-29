@@ -305,7 +305,7 @@ textarea.form-input { resize: vertical; min-height: 140px; }
     </div>
   </section>
 
-  <div class="section-label">Portfolio — 7 projects</div>
+  <div class="section-label">Portfolio — 8 projects</div>
   <div class="grid">
 
     <div class="card fade-in" onclick="showProject(0)">
@@ -373,6 +373,15 @@ textarea.form-input { resize: vertical; min-height: 140px; }
         <div class="card-num">07</div>
         <div class="card-title">Mafia Character</div>
         <div class="card-sub">3D Character · Game Ready</div>
+      </div>
+      <div class="card-arrow">↗</div>
+    </div>
+    <div class="card fade-in" onclick="showProject(7)">
+      <img loading="lazy" src="images/dune/cOMPO3.jpg" alt="Paul Atreides from Dune">
+      <div class="card-overlay">
+        <div class="card-num">08</div>
+        <div class="card-title">Paul Atreides</div>
+        <div class="card-sub">3D Character · Stylized</div>
       </div>
       <div class="card-arrow">↗</div>
     </div>
@@ -561,6 +570,28 @@ textarea.form-input { resize: vertical; min-height: 140px; }
       <div class="render-card wide" onclick="openLightbox(6,11)"><img loading="lazy" src="images/mafia/Pure.jpg" alt="Pure clay render"></div>
     </div>
     <a href="https://www.artstation.com/artwork/Ov1OVJ" target="_blank" class="artstation-link">View on ArtStation ↗</a>
+  </div>
+</div>
+
+
+<!-- ══ PROJECT 7: PAUL ATREIDES ══ -->
+<div class="page" id="page-project-7">
+  <div class="project-inner">
+    <div class="project-header fade-in">
+      <div class="type">08 · 3D Character · Stylized</div>
+      <h1>Paul Atreides<br><em>(Timothée Chalamet)</em><br>from Dune</h1>
+    </div>
+    <div class="project-desc fade-in">
+      <p>Dune Part III will be in cinemas soon, and since I'm really looking forward to it, I've decided to model it in 3D to ease the hype a bit.</p>
+      <p>I have relied heavily on the style of Arcane (from league of legends) because it is another series that I really like, and I wanted to see if I was capable of doing something in that style. Also got inspired by the new Netflix animated Stranger Things Tales from 85 series. Hope you like it!</p>
+    </div>
+    <div class="renders-grid">
+      <div class="render-card wide" onclick="openLightbox(7,0)"><img loading="lazy" src="images/dune/cOMPO3.jpg" alt="Dune cover render"></div>
+      <div class="render-card wide" onclick="openLightbox(7,1)"><img loading="lazy" src="images/dune/cOMPO1.jpg" alt="Dune render 1"></div>
+      <div class="render-card wide" onclick="openLightbox(7,2)"><img loading="lazy" src="images/dune/cOMPO2.jpg" alt="Dune render 2"></div>
+      <div class="render-card wide" onclick="openLightbox(7,3)"><img loading="lazy" src="images/dune/Maps.jpg" alt="Texture maps"></div>
+    </div>
+    <a href="https://www.artstation.com/artwork/ayNV5J" target="_blank" class="artstation-link">View on ArtStation ↗</a>
   </div>
 </div>
 
@@ -841,7 +872,7 @@ textarea.form-input { resize: vertical; min-height: 140px; }
 let projectImages = [];
 
 function buildImageArrays() {
-  projectImages = [0,1,2,3,4,5,6].map(i => {
+  projectImages = [0,1,2,3,4,5,6,7].map(i => {
     const page = document.getElementById('page-project-' + i);
     if (!page) return [];
     return Array.from(page.querySelectorAll('.render-card img')).map(img => img.src);
@@ -912,7 +943,7 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
 // ── Inject "Back to projects" button into every project page ──
 function injectBackButtons() {
-  [0,1,2,3,4,5,6].forEach(function(i) {
+  [0,1,2,3,4,5,6,7].forEach(function(i) {
     var page = document.getElementById('page-project-' + i);
     if (!page) return;
     var inner = page.querySelector('.project-inner');
